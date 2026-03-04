@@ -65,4 +65,4 @@ class TestHistory:
 
     def test_get_last_empty_raises(self, history):
         with pytest.raises(HistoryError, match="No calculations"):
-            history.get_last()
+            history.get_last(
