@@ -10,9 +10,9 @@ class CalculatorConfig:
     log_dir:str
     history_dir:str
     max_history_size:int
-    autosave:bool
+    auto_save:bool
     precision:int
-    max_input:float
+    max_input_value:float
     default_encoding:str
     log_file:str
     history_file:str
@@ -31,7 +31,7 @@ class CalculatorConfig:
                 log_file=os.getenv("CALCULATOR_LOG_FILE", "logs/calculator.log"),
                 history_file=os.getenv("CALCULATOR_HISTORY_FILE", "history/calculator_history.csv"),
             )
-         except ValueError as e:
+        except ValueError as e:
             raise ConfigurationError(f"Invalid configuration value: {e}") from e
 
         config._ensure_directories()
