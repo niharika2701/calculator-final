@@ -72,7 +72,7 @@ def run_repl() -> None:  # pragma: no cover
             continue
 
         try:
-            output = commands[keyword].execute(args, calculator, config)
+            output = commands[keyword].execute([keyword] + args, calculator, config)
             print_success(output)
         except CalculatorException as e:
             print_error(str(e))
